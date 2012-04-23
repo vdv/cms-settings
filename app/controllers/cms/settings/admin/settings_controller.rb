@@ -19,7 +19,7 @@ class Cms::Settings::Admin::SettingsController < Cms::Admin::ApplicationControll
   def create
     @setting = Cms::Setting.new(params[:cms_setting])
     if @setting.save
-      redirect_to cms_settings.admin_settings_url, :notice => 'Параметр сохранен.'
+      redirect_to cms_settings.admin_cms_settings_url, :notice => 'Параметр сохранен.'
     else
       render :action => "new"
     end
@@ -29,7 +29,7 @@ class Cms::Settings::Admin::SettingsController < Cms::Admin::ApplicationControll
     @setting = Cms::Setting.find(params[:id])
 
     if @setting.update_attributes(params[:cms_setting])
-      redirect_to admin_settings_url, :notice => 'Параметр сохранен.'
+      redirect_to cms_settings.admin_cms_settings_url, :notice => 'Параметр сохранен.'
     else
       render :action => "edit"
     end
