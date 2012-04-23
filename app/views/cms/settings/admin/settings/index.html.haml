@@ -1,0 +1,15 @@
+%h1 Настройки
+
+%table.table-condensed.table-striped.table
+  %thead
+    %tr
+      %th Название
+      %th Значение
+      %th
+  %tbody
+    - @settings.each do |setting|
+      %tr
+        %td= setting.title
+        %td= setting.value
+        %td
+          = link_to 'Редактировать', edit_admin_setting_path(setting), :class => "btn btn-warning"

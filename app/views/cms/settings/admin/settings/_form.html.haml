@@ -1,0 +1,25 @@
+
+= form_for [:admin, @setting], :html => {:class => 'form-horizontal'}  do |f|
+  -if @setting.errors.any?
+    .alert.alert-error
+      %ul
+        - @setting.errors.full_messages.each do |msg|
+          %li= msg
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name
+
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title
+
+  .control-group
+    = f.label :value, :class => 'control-label'
+    .controls
+      = f.text_field :value
+
+  .form-actions
+    = f.button 'Сохранить', :type => :submit, :class => 'btn btn-primary wymupdate'
+
