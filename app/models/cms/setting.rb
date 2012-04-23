@@ -1,6 +1,6 @@
 module Cms
   class Setting < ActiveRecord::Base
-    set_table_name :cms_settings
+    self.table_name = :cms_settings
     # attr_accessible :title, :body
 
     validates :name, :presence => true, :uniqueness => true
